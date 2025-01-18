@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    background-color: #ffffff;
+    padding: 20px;
+    width: 20%;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    width: 80px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.sidebar h1 {
+    font-size: 24px;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin: 10px 0;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #1f1e1e;
+    font-size: 20px;
+}
+
+.content {
+    flex-grow: 2;
+    padding: 30px;
+    background-color: #333333;
+}
+
+.hero {
+    background-image: url('background.jpg'); /* Cambia a la imagen que desees */
+    background-size: cover;
+    background-position: center;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.about {
+    background-color: #8d8d8d;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+.about h3 {
+    margin-top: 0;
+}
+
+.about p {
+    font-size: 16px;
+    line-height: 1.5;
+}

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Información Personal</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f9fb;
+            color: #333;
+            margin: 0;
+        }
+
+        h1, h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: #2a9d8f;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        .sidebar {
+            background-color: #ffffff;
+            padding: 20px;
+            width: 20%;
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            border-right: 1px solid #ddd;
+        }
+
+        .sidebar img.logo {
+            width: 120px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar h1 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            color: #2a9d8f;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .sidebar nav ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar nav ul li a {
+            display: block;
+            padding: 10px 15px;
+            background-color: #1a646d;
+            color: white;
+            border-radius: 5px;
+            text-align: left;
+            transition: background-color 0.3s ease, padding-left 0.3s ease;
+        }
+
+        .sidebar nav ul li a:hover {
+            background-color: #1a9e8f;
+            padding-left: 20px;
+        }
+
+        .content {
+            padding: 30px;
+            flex: 1;
+            background-color: #f1faee;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero {
+            background-color: #a2dbd5;
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .form-container {
+            background: white;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .form-container h3 {
+            margin-top: 0;
+            color: #2a9d8f;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #83bdff;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-group button {
+            background: #2a9d8f;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        .form-group button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <aside class="sidebar">
+            <form action="guardar_tutor.php" method="POST">
+
+            <img src="logo.png" alt="Logo" class="logo">
+            <h1>Registro de Información</h1>
+            <nav>
+                <ul>
+                    <li><a href="Inicio Trabajador Social.html">Inicio</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <section class="hero">
+                <h2>Formulario de Información del Tutor</h2>
+                <p>Complete los siguientes datos como se solicita.</p>
+            </section>
+
+            <div class="form-container">
+                <h3>Datos Personales</h3>
+                <form action="#" method="POST">
+
+                    <div class="form-group">
+                        <label for="nombre_completo">Nombre completo:</label>
+                        <input type="text" id="nombre_completo" name="nombre_completo" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sexo">Sexo:</label>
+                        <select id="sexo" name="sexo" required>
+                            <option value="">Seleccione</option>
+                            <option value="hombre">Hombre</option>
+                            <option value="mujer">Mujer</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+                        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="curp">CURP:</label>
+                        <input type="text" id="curp" name="curp" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rfc">RFC:</label>
+                        <input type="text" id="rfc" name="rfc" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nivel_estudios">Nivel de estudios:</label>
+                        <input type="text" id="nivel_estudios" name="nivel_estudios" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="situacion_economica">Situación económica:</label>
+                        <input type="text" id="situacion_economica" name="situacion_economica">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="idiomas">Idiomas:</label>
+                        <input type="text" id="idiomas" name="idiomas">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="identificaciones_oficiales">Identificaciones oficiales:</label>
+                        <input type="text" id="identificaciones_oficiales" name="identificaciones_oficiales">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="domicilio">Domicilio:</label>
+                        <input type="text" id="domicilio" name="domicilio" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="condiciones_domicilio">Condiciones del domicilio:</label>
+                        <textarea id="condiciones_domicilio" name="condiciones_domicilio" rows="4"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="datos_contacto">Datos del contacto:</label>
+                        <input type="text" id="datos_contacto" name="datos_contacto">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="es_migrante">¿Es migrante?</label>
+                        <select id="es_migrante" name="es_migrante">
+                            <option value="">Seleccione</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="es_refugiada">¿Es refugiada/o?</label>
+                        <select id="es_refugiada" name="es_refugiada">
+                            <option value="">Seleccione</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="habla_espanol">¿Habla español?</label>
+                        <select id="habla_espanol" name="habla_espanol">
+                            <option value="">Seleccione</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tiene_discapacidad">¿Tiene condición de discapacidad?</label>
+                        <select id="tiene_discapacidad" name="tiene_discapacidad">
+                            <option value="">Seleccione</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="es_aislado">¿Es aislado/a político/a?</label>
+                        <select id="es_aislado" name="es_aislado">
+                            <option value="">Seleccione</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fue_desplazada">¿Fue desplazada del país?</label>
+                        <select id="fue_desplazada" name="fue_desplazada">
+                            <option value="">Seleccione</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pertenece_institucion">¿Pertenece a una institución?</label>
+                        <select id="pertenece_institucion" name="pertenece_institucion">
+                            <option value="">Seleccione</option>
+                            <option value="federal">Federal</option>
+                            <option value="estatal">Estatal</option>
+                            <option value="sociedad_civil">Sociedad Civil</option>
+                            <option value="religiosa">Religiosa</option>
+                            <option value="asistencia_privada">Asistencia Privada</option>
+                            <option value="internacional">Internacional</option>
+                            <option value="ninguna">Ninguna</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="parentesco_victima">Parentesco con la víctima:</label>
+                        <input type="text" id="parentesco_victima" name="parentesco_victima">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="trabaja">¿Trabaja?</label>
+                        <select id="trabaja" name="trabaja">
+                            <option value="">Seleccione</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit">Guardar y ir al Inicio</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

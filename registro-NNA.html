@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro de Solicitudes</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f9fb;
+            color: #333;
+            margin: 0;
+        }
+
+        h1, h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: #2a9d8f;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        .sidebar {
+            background-color: #ffffff;
+            padding: 20px;
+            width: 20%;
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            border-right: 1px solid #ddd;
+        }
+
+        .sidebar img.logo {
+            width: 120px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar h1 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            color: #2a9d8f;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .sidebar nav ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar nav ul li a {
+            display: block;
+            padding: 10px 15px;
+            background-color: #1a646d;
+            color: white;
+            border-radius: 5px;
+            text-align: left;
+            transition: background-color 0.3s ease, padding-left 0.3s ease;
+        }
+
+        .sidebar nav ul li a:hover {
+            background-color: #1a9e8f;
+            padding-left: 20px;
+        }
+
+        .content {
+            padding: 30px;
+            flex: 1;
+            background-color: #f1faee;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero {
+            background-color: #a2dbd5;
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .form-container {
+            background: white;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .form-container h3 {
+            margin-top: 0;
+            color: #2a9d8f;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #83bdff;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-group button {
+            background: #2a9d8f;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        .form-group button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <aside class="sidebar">
+            <form action="guardar_NNA.php" method="POST">
+            
+            <img src="logo.png" alt="Logo" class="logo">
+            <h1>Trabajador Social</h1>
+            <nav>
+                <ul>
+                    <li><a href="Inicio Trabajador Social.html">Inicio</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <section class="hero">
+                <h2>Formato de Datos del NNA</h2>
+                <p>Complete confome a lo solicitado.</p>
+            </section>
+
+            <div class="form-container">
+                <h3>Formulario de Datos del NNA</h3>
+                <form action="#" method="POST">
+
+                    <div class="form-group">
+                        <label for="lugar_solicitud">Lugar de solicitud:</label>
+                        <input type="text" id="lugar_solicitud" name="lugar_solicitud" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fecha_solicitud">Fecha de solicitud:</label>
+                        <input type="date" id="fecha_solicitud" name="fecha_solicitud" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quien_realiza_solicitud">¿Quién realiza la solicitud?</label>
+                        <select id="quien_realiza_solicitud" name="quien_realiza_solicitud" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="victima_directa">Víctima directa</option>
+                            <option value="victima_familiar">Víctima a través de familiar</option>
+                            <option value="servidor_publico">Servidor público</option>
+                            <option value="representante_legal">Representante legal</option>
+                        </select>
+                    </div>
+
+                    <!-- Datos personales -->
+                    <div class="form-group">
+                        <label for="nombre">Nombre del Infante:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="primer_apellido">Primer apellido:</label>
+                        <input type="text" id="primer_apellido" name="primer_apellido" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="segundo_apellido">Segundo apellido:</label>
+                        <input type="text" id="segundo_apellido" name="segundo_apellido">
+                    </div>
+                    <div class="form-group">
+                        <label for="Edad">Edad</label>
+                        <input type="text" id="edad" name="edad">
+                        <div class="form-group">
+                            <label for="Fecha de nacimiento">Fecha de Nacimiento</label>
+                            <input type="date" id="nacimiento" name="nacimiento">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="quien_realiza_solicitud">¿Enfermedades y/o Alergías?</label>
+                        <select id="quien_realiza_solicitud" name="quien_realiza_solicitud" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="Si">Si</option>
+                            <option value="No">No</option>
+                            <option value="No lo se">No lo se</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                    <label for="telefono_movil"> ¿Cuenta con teléfono móvil</label>
+                        <input type="tel" id="telefono_movil" name="telefono_movil" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono_fijo">¿Cuenta con teléfono fijo?</label>
+                        <input type="tel" id="telefono_fijo" name="telefono_fijo">
+                    </div>
+
+                    <!-- Dirección de los hechos -->
+                    <div class="form-group">
+                        <label for="calle">Calle de los hechos:</label>
+                        <input type="text" id="calle" name="calle" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="codigo_postal">Código postal:</label>
+                        <input type="text" id="codigo_postal" name="codigo_postal" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="numero_exterior">Número exterior:</label>
+                        <input type="text" id="numero_exterior" name="numero_exterior" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="numero_interior">Número interior:</label>
+                        <input type="text" id="numero_interior" name="numero_interior">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="colonia">Colonia:</label>
+                        <input type="text" id="colonia" name="colonia" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="localidad">Localidad:</label>
+                        <input type="text" id="localidad" name="localidad" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="delegacion">Delegación o municipio:</label>
+                        <input type="text" id="delegacion" name="delegacion" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="entidad_federativa">Entidad federativa:</label>
+                        <input type="text" id="entidad_federativa" name="entidad_federativa" required>
+                    </div>
+
+                    <!-- Relato de los hechos -->
+                    <div class="form-group">
+                        <label for="relato_hechos">Relato de los hechos:</label>
+                        <textarea id="relato_hechos" name="relato_hechos" rows="5" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit">Guardar y enviar</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

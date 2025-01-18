@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Diagnósticos Iniciales</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f9fb;
+            color: #333;
+            margin: 0;
+        }
+
+        h1, h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: #2a9d8f;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        .sidebar {
+            background-color: #ffffff;
+            padding: 20px;
+            width: 20%;
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            border-right: 1px solid #ddd;
+        }
+
+        .sidebar img.logo {
+            width: 120px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar h1 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            color: #2a9d8f;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .sidebar nav ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar nav ul li a {
+            display: block;
+            padding: 10px 15px;
+            background-color: #1a646d;
+            color: white;
+            border-radius: 5px;
+            text-align: left;
+            transition: background-color 0.3s ease, padding-left 0.3s ease;
+        }
+
+        .sidebar nav ul li a:hover {
+            background-color: #1a9e8f;
+            padding-left: 20px;
+        }
+
+        .content {
+            padding: 30px;
+            flex: 1;
+            background-color: #f1faee;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero {
+            background-color: #a2dbd5;
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .form-container {
+            background: white;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .form-container h3 {
+            margin-top: 0;
+            color: #2a9d8f;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #83bdff;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-group button {
+            background: #2a9d8f;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        .form-group button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <aside class="sidebar">
+            <form action="guardar_diagnostico.php" method="POST">
+
+            <img src="logo.png" alt="Logo" class="logo">
+            <h1>Registro de Diagnóstico Inicial</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Cédulas de trabajo</a></li>
+                    <li><a href="#">Expedientes</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <section class="hero">
+                <h2>Formulario de Diagnósticos Iniciales</h2>
+                <p>Complete los siguientes datos para el diagnóstico inicial.</p>
+            </section>
+
+            <div class="form-container">
+                <h3>Datos del Diagnóstico</h3>
+                <form action="#" method="POST">
+
+                    <div class="form-group">
+                        <label for="fecha">Fecha:</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ciudad_localidad">Ciudad o localidad:</label>
+                        <input type="text" id="ciudad_localidad" name="ciudad_localidad" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="narracion_sucedido">Narración de lo sucedido:</label>
+                        <textarea id="narracion_sucedido" name="narracion_sucedido" rows="4" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="referencias_ubicacion">Referencias de la ubicación de la vivienda del NNA:</label>
+                        <textarea id="referencias_ubicacion" name="referencias_ubicacion" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nombre_nna">Nombre del NNA:</label>
+                        <input type="text" id="nombre_nna" name="nombre_nna" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edad_nna">Edad del NNA:</label>
+                        <input type="number" id="edad_nna" name="edad_nna" min="0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nombre_responsable">Nombre del responsable del NNA:</label>
+                        <input type="text" id="nombre_responsable" name="nombre_responsable" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ocupacion_responsable">Ocupación del responsable:</label>
+                        <input type="text" id="ocupacion_responsable" name="ocupacion_responsable" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="parentesco_nna">Parentesco con el NNA:</label>
+                        <input type="text" id="parentesco_nna" name="parentesco_nna" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipo_vivienda">Tipo de vivienda:</label>
+                        <input type="text" id="tipo_vivienda" name="tipo_vivienda" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sosten_economico">Sostén económico de la vivienda:</label>
+                        <input type="text" id="sosten_economico" name="sosten_economico">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nna_nacionalidad">¿El NNA es de nacionalidad mexicana?</label>
+                        <select id="nna_nacionalidad" name="nna_nacionalidad" required>
+                            <option value="">Seleccione</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit">Guardar y ir al Inicio</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

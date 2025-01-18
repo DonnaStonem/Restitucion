@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir y Visualizar Expedientes</title>
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: #2a9d8f;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        .sidebar {
+            background-color: #ffffff;
+            padding: 20px;
+            width: 20%;
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            border-right: 1px solid #ddd;
+        }
+
+        .sidebar img.logo {
+            width: 120px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar h1 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            color: #2a9d8f;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .sidebar nav ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar nav ul li a {
+            display: block;
+            padding: 10px 15px;
+            background-color: #1a646d;
+            color: white;
+            border-radius: 5px;
+            text-align: left;
+            transition: background-color 0.3s ease, padding-left 0.3s ease;
+        }
+
+        .sidebar nav ul li a:hover {
+            background-color: #1a9e8f;
+            padding-left: 20px;
+        }
+
+        /* Sección principal */
+        .content {
+            padding: 30px;
+            flex: 1;
+            background-color: #f1faee;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero {
+            background-color: #a2dbd5;
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+        }
+
+        .about {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .about h3 {
+            margin-bottom: 15px;
+        }
+
+        /* Recuadro de información adicional */
+        .recuadro {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-left: 5px solid #2a9d8f;
+            margin-top: 15px;
+            border-radius: 8px;
+            max-width: 600px;
+        }
+
+        .titulo {
+            font-weight: bold;
+            color: #93a7af;
+        }
+
+        .recuadro p {
+            margin-bottom: 10px;
+        }
+
+        .profile-picture {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            width: 70px;
+            height: 70px;
+            border-radius: 70%;
+            border: 6px solid #2a9d8f;
+        }
+
+        /* Estilos del formulario */
+        label {
+            color: white;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        select, input[type="text"] {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #2a9d8f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1a646d;
+        }
+
+        /* Para ocultar y mostrar formularios */
+        .hidden {
+            display: none;
+        }
+
+        /* Estilo de los vínculos para subir expediente */
+        .expediente-link {
+            display: block;
+            margin: 10px 0;
+            color: #1a9e8f;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .expediente-link:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+
+    <script>
+        // Función para mostrar u ocultar formularios al hacer clic
+        function toggleForm(id) {
+            var form = document.getElementById(id);
+            if (form.classList.contains('hidden')) {
+                form.classList.remove('hidden');
+            } else {
+                form.classList.add('hidden');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <img src="logo.png" alt="Logo de La FUD" class="logo">
+            <h1>Subir y Visualizar Expedientes</h1>
+            <nav>
+                <ul>
+                    <li><a href="id_trabajador_social.html">Consulta aquí tu celula Profesional</a></li>
+                    <li><a href="consulta_curp.php">Consultar expediente de niño</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <section class="hero">
+                <h2>Trabajador Social</h2>
+                <p>"FPRD de NNA Fundación para la Protección y restitución de derechos de niñas, niños y adolescentes"</p>
+            </section>
+
+            <section class="about">
+                <div class="form-item">
+                    <h3><a href="agregar_nino.html">Vulneración de Derechos</a></h3>
+                    <p>Registra y define medidas de restitución para casos específicos.</p>
+                </div>
+                <div class="form-item">
+                    <h3><a href="reportar_accion.html">Reportar Acción Realizada</a></h3>
+                    <p>Informa sobre acciones ejecutadas en medidas de restitución.</p>
+                </div>
+                <div class="form-item">
+                    <h3><a href="diagnostico.html">Diagnostico Inicial</a></h3>
+                    <p>Realiza el diagnostico de datos del menor</p>
+                </div>
+                <div class="form-item">
+                    <h3><a href="registro-de-acercamiento.html">Registro de datos del Tutor</a></h3>
+                    <p>Datos del tutor del menor</p>
+                </div>
+                <div class="form-item">
+                    <h3><a href="registro-NNA.html">Datos del NNA</a></h3>
+                    <p>Guarda los datos del NNA</p>
+                    <div class="form-item">
+                        <p><printf>Buscar expediente</printf></p>
+                
+                        <textarea id="curp" name="curp" rows="1" placeholder="CURP del niño" required></textarea>
+                        <br>
+                        <button type="submit">Buscar expediente</button>
+                </div>
+            </section>
+
+                
+                
+        </main>
+
+        <img src="perfil.png" alt="Foto de perfil" class="profile-picture">
+    </div>
+</body>
+</html>
+
