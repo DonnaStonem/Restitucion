@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Evaluaciones Psicológicas</title>
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: #2a9d8f;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Contenedor principal */
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        /* Barra lateral */
+        .sidebar {
+            background-color: #ffffff;
+            padding: 20px;
+            width: 20%;
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            border-right: 1px solid #ddd;
+        }
+
+        .sidebar img.logo {
+            width: 120px; 
+            margin-bottom: 10px;
+        }
+
+        .sidebar h1 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            color: #2a9d8f;
+        }
+
+        .sidebar nav ul {
+            list-style: none; 
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .sidebar nav ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar nav ul li a {
+            display: block;
+            padding: 10px 15px;
+            background-color: #1a646d; 
+            color: white;
+            border-radius: 5px;
+            text-align: left;
+            transition: background-color 0.3s ease, padding-left 0.3s ease;
+        }
+
+        .sidebar nav ul li a:hover {
+            background-color: #1a9e8f; 
+            padding-left: 20px; 
+        }
+
+        .sidebar nav ul li a::before {
+            content: '→'; 
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        /* Sección principal */
+        .content {
+            padding: 30px;
+            flex: 1;
+            background-color: #f1faee;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        .form-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-item h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.2rem;
+        }
+
+        /* Estilos para formularios */
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Barra lateral -->
+        <div class="sidebar">
+            <img class="logo" src="logo.png" alt="Logo">
+            <h1>Medidas y Acciones</h1>
+            <nav>
+                <ul>
+                    <li><a href="javascript:history.back()">Volver a la página anterior</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="content">
+            <h2>Formulario de Medidas y Acciones</h2>
+
+            <div class="form-container">
+                <form action="acciones_.php" method="post">
+                    <!-- Medidas -->
+                    <div class="form-item">
+                        <h3>Formulario de Medidas</h3>
+                        <label for="curp">CURP del niño</label>
+                        <textarea id="curp" name="curp" rows="4" placeholder="CURP del niño asignado en el caso" required></textarea>
+                        <label for="Nommedida">Nombre de la Medida</label>
+                        <textarea id="Nommedida" name="Nommedida" rows="4" placeholder="Nombre de la medida a utilizar en el caso" required></textarea>
+                
+                        <label for="estrategia">Estrategia</label>
+                        <textarea id="estrategia" name="estrategia" rows="4" placeholder="Describa la estrategia a utilizar" required></textarea>
+                
+                        <label for="descripcion">Descripción</label>
+                        <textarea id="descripcion" name="descripcion" rows="4" placeholder="Descripción de la medida a utilizar" required></textarea>
+                
+                        <label for="tipmedida">Tipo de medida</label>
+                        <select id="tipmedida" name="tipmedida" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="CoP">Cautelar o de Prevención</option>
+                            <option value="proteccion">De Protección</option>
+                            <option value="restitucion">De restitución</option>
+                            <option value="RyA">De Rehabilitación y asistencia</option>
+                            <option value="nivelacion">De Nivelación</option>
+                            <option value="inclusion">De inclusión</option>
+                            <option value="SyP">De seguridad y protección civil</option>
+                            <option value="reparacion">De reparación</option>
+                            <option value="reinsercion">De reinserción</option>
+                            <option value="Seguimiento">De Seguimiento</option>
+                        </select>
+                
+                        <label for="urgente">Urgente</label>
+                        <select id="urgente" name="urgente" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                
+                        <label for="especial">Especial</label>
+                        <select id="especial" name="especial" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                
+                        <label for="temporal">Temporal</label>
+                        <select id="temporal" name="temporal" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                
+                        <label for="unidad_medida">Unidad de medida</label>
+                        <select id="unidad_medida" name="unidad_medida" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="entero">Valor entero</option>
+                            <option value="decimal">Valor con decimales</option>
+                            <option value="porcentaje">Porcentaje</option>
+                            <option value="boleano">Valor boleano</option>
+                        </select>
+                
+                        <label for="meta">Meta esperada</label>
+                        <input type="text" id="meta" name="meta" placeholder="Ingresa la meta según la unidad de medida" required>
+                    </div>
+                
+                    <!-- Acciones -->
+                    <div class="form-item">
+                        <h3>Formulario de Acciones</h3>
+                        <label for="Nomaccion">Nombre de la Acción</label>
+                        <textarea id="Nomaccion" name="Nomaccion" rows="4" placeholder="Nombre de la acción a utilizar en el caso" required></textarea>
+                
+                        <label for="descripcion_accion">Descripción de la Acción</label>
+                        <textarea id="descripcion_accion" name="descripcion_accion" rows="4" placeholder="Descripción de la acción a tomar" required></textarea>
+                
+                        <label for="fecha_accion">Fecha de la Acción tomada</label>
+                        <input type="date" id="fecha_accion" name="fecha_accion" required>
+                
+                        <label for="hora_accion">Hora de inicio de la acción</label>
+                        <input type="time" id="hora_accion" name="hora_accion" required>
+                
+                        <label for="responsable">Responsable de la acción</label>
+                        <select id="responsable" name="responsable" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="Psicologo">Psicólogo</option>
+                            <option value="Abogado">Abogado</option>
+                            <option value="Medico">Médico</option>
+                            <option value="TS">Trabajador Social</option>
+                        </select>
+                
+                        <label for="involucrados">Actores involucrados en la acción</label>
+                        <textarea id="involucrados" name="involucrados" rows="4" placeholder="Actores involucrados en la acción" required></textarea>
+                
+                        <label for="evidencia_accion">Evidencia para tomar la acción</label>
+                        <input type="file" id="evidencia_accion" name="evidencia_accion">
+                
+                        <label for="progreso_accion">Progreso de la Acción</label>
+                        <textarea id="progreso_accion" name="progreso_accion" rows="4" placeholder="Describe el progreso logrado con la acción tomada" required></textarea>
+                    </div>
+                
+                    <button type="submit">Guardar Medida y Acción</button>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
