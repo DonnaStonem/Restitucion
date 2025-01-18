@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIRECTOR</title>
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: #2a9d8f;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            background-color: #1a646ddf;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #d85742;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        .sidebar {
+            background-color: #ffffff;
+            padding: 20px;
+            width: 20%;
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            border-right: 1px solid #ddd;
+        }
+
+        .sidebar img.logo {
+            width: 230px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar h1 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            color: #2a9d8f;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .sidebar nav ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar nav ul li a {
+            display: block;
+            padding: 10px 15px;
+            background-color: #1a646d;
+            color: white;
+            border-radius: 5px;
+            text-align: left;
+            transition: background-color 0.3s ease, padding-left 0.3s ease;
+        }
+
+        .sidebar nav ul li a:hover {
+            background-color: #1a9e8f;
+            padding-left: 20px;
+        }
+
+        .sidebar nav ul li a::before {
+            content: '→';
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        /* Sección principal */
+        .content {
+            padding: 30px;
+            flex: 1;
+            background-color: #f1faee;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero {
+            background-color: #a2dbd5;
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+        }
+
+        .about {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .about h3 {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        /* Recuadro de información adicional */
+        .recuadro {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-left: 5px solid #2a9d8f;
+            margin-top: 15px;
+            border-radius: 8px;
+            max-width: 600px;
+        }
+
+        .titulo {
+            font-weight: bold;
+            color: #93a7af;
+        }
+
+        .recuadro p {
+            margin-bottom: 10px;
+        }
+
+        .profile-picture {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid #2a9d8f;
+        }
+
+        /* Estilos del formulario */
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .form-item {
+            margin-bottom: 15px;
+        }
+
+        .form-item label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-item input[type="text"],
+        .form-item input[type="email"],
+        .form-item select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-item button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-item button:hover {
+            background-color: #218838;
+        }
+
+        /* Estilos para la tabla de actores */
+        .actor-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .actor-table th, .actor-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .actor-table th {
+            background-color: #2a9d8f;
+            color: white;
+        }
+
+        .actor-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <img src="logo.png" alt="Logo de La FUD" class="logo">
+
+            </nav>
+        </aside>
+
+        <main class="content">
+            <section class="hero">
+                <h2>DIRECTOR</h2>
+                <p>"FPRD de NNA Fundación para la Protección y restitución de derechos de niñas, niños y adolescentes"</p>
+            </section>
+
+            <section class="about">
+                <li><a href="mostrar_celulas.php">Cédulas de trabajo y empleados</a></li>
+            </section>
+            <section class="about">
+                <li><a href="consulta_curp.php">Consultar expediente de niño</a></li>
+
+            </section>
+            
+            <section class="form-container">
+                <li><a href="altaactores.html">Dar de alta un Actor en materia de derechos de la región.</a></li>
+            </section>
+            <section class="form-container">
+                <li><a href="altaservicios.html">Dar de alta un servicio en materia de derechos </a></li>
+            </section>
+            <section class="form-container">
+                
+            </section>
+            <a href="https://www.unicef.org/mexico/media/1256/file/Caja%20de%20Herramientas.pdf">CAJA DE HERRAMIENTAS</a>
+        </main>
+        <img src="perfil.png" alt="Foto de perfil" class="profile-picture">
+    </div>
+</body>
+</html>
+

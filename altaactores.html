@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Actores</title>
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #2a9d8f;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            background-color: #1a646ddf;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #d85742;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        .sidebar {
+            background-color: #ffffff;
+            padding: 20px;
+            width: 20%;
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            border-right: 1px solid #ddd;
+        }
+
+        .sidebar img.logo {
+            width: 120px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar h1 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            color: #2a9d8f;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .sidebar nav ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar nav ul li a {
+            display: block;
+            padding: 10px 15px;
+            background-color: #1a646d;
+            color: white;
+            border-radius: 5px;
+            text-align: left;
+            transition: background-color 0.3s ease, padding-left 0.3s ease;
+        }
+
+        .sidebar nav ul li a:hover {
+            background-color: #1a9e8f;
+            padding-left: 20px;
+        }
+
+        .content {
+            padding: 30px;
+            flex: 1;
+            background-color: #f1faee;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero {
+            background-color: #a2dbd5;
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .about {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .submit-button {
+            background-color: #2a9d8f;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background-color: #1a646d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <img src="logo.png" alt="Logo de La FUD" class="logo">
+            <h1>Registro de Actores</h1>
+            <nav>
+                <ul>
+                    <li><a href="celulasdirector.html">Cédulas de trabajo y empleados</a></li>
+                    <li><a href="inicioDirector.html">Inicio</a></li>
+                </ul>
+            </nav>
+        </aside>
+        </div>
+
+        <div class="content">
+            <section class="hero">
+                <form action="altaactores1.php" method="post">
+                <h2>Registrar Actor en Derechos</h2>
+                <p>"FPRD de NNA Fundación para la Protección y restitución de derechos de niñas, niños y adolescentes"</p>
+            </section>
+
+            <section class="about">
+                <h3>Formulario de Registro</h3>
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion">Dirección</label>
+                        <input type="text" id="direccion" name="direccion" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tipo">Tipo</label>
+                        <select id="tipo" name="tipo" required>
+                            <option value="">Seleccione un tipo</option>
+                            <option value="Sociedad Civil">Organizaciones de la Sociedad civil</option>
+                            <option value="Gobierno">Gobierno</option>
+                            <option value="Instituciones academicas">Instituciones Academicas</option>
+                            <option value="Defensores de Derechos">Defensores de Derechos</option>
+                            <option value="Comisiones de Derechos">Comisiones de Derechos Humanos</option>
+                            <option value="Instituciones internacionales">Instituciones Internacionales</option>
+                            <option value="Medios">Medios de Comunicación</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcion">Descripción</label>
+                        <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="servicios">Servicios que ofrece</label>
+                        <input type="text" id="servicios" name="servicios" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tipos-servicios">Tipos de servicios</label>
+                        <input type="text" id="tipos-servicios" name="tipos_servicios" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="horario">Horario</label>
+                        <input type="text" id="horario" name="horario" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contacto">Datos de contacto</label>
+                        <input type="text" id="contacto" name="contacto" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="capacidad">Capacidad</label>
+                        <input type="number" id="capacidad" name="capacidad" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha-deteccion">Fecha de detección</label>
+                        <input type="date" id="fecha-deteccion" name="fecha_deteccion" required>
+                    </div>
+                    <button type="submit" class="submit-button">Registrar Actor</button>
+                </form>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
