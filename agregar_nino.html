@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Niño y Derechos Vulnerados</title>
+</head>
+<body>
+    <h1>Agregar Niño y Derechos Vulnerados</h1>
+
+    <!-- Formulario para agregar un niño -->
+    <form method="POST" action="consultar_derechos.php">
+        <h2>Datos del Niño</h2>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+
+        <label for="apellido_p">Apellido Paterno:</label>
+        <input type="text" id="apellido_p" name="apellido_p" required><br>
+
+        <label for="apellido_m">Apellido Materno:</label>
+        <input type="text" id="apellido_m" name="apellido_m" required><br>
+        
+        <label for="curp">CURP del menor:</label>
+        <input type="text" id="curp" name="curp" required><br>
+
+        <h2>Derecho Vulnerado y Aspectos de Restitución</h2>
+        <label for="derecho_vulnerado">Derecho Vulnerado:</label>
+        <select name="derecho_vulnerado" id="derecho_vulnerado" required>
+            <option value="Derecho a la vida, a la paz, a la supervivencia y al desarrollo">Derecho a la vida, a la paz, a la supervivencia y al desarrollo</option>
+            <option value="Derecho de prioridad">Derecho de prioridad</option>
+            <option value="Derecho a la identidad">Derecho a la identidad</option>
+            <option value="Derecho a vivir en familia">Derecho a vivir en familia</option>
+            <option value="Derecho a la igualdad sustantiva">Derecho a la igualdad sustantiva</option>
+            <option value="Derecho a no ser discriminado">Derecho a no ser discriminado</option>
+            <option value="Derecho a vivir en condiciones de bienestar y a un sano desarrollo integral">Derecho a vivir en condiciones de bienestar y a un sano desarrollo integral</option>
+            <option value="Derecho a una vida libre de violencia y a la integridad personal">Derecho a una vida libre de violencia y a la integridad personal</option>
+            <option value="Derecho a la protección de la salud y a la seguridad social">Derecho a la protección de la salud y a la seguridad social</option>
+            <option value="Derecho a la inclusión de niñas, niños y adolescentes con discapacidad">Derecho a la inclusión de niñas, niños y adolescentes con discapacidad</option>
+            <option value="Derecho a la educación">Derecho a la educación</option>
+            <option value="Derecho al descanso y al esparcimiento">Derecho al descanso y al esparcimiento</option>
+            <option value="Derecho a la libertad de convicciones éticas, pensamiento, conciencia, religión y cultura">Derecho a la libertad de convicciones éticas, pensamiento, conciencia, religión y cultura</option>
+            <option value="Derecho a la libertad de expresión y de acceso a la información">Derecho a la libertad de expresión y de acceso a la información</option>
+            <option value="Derecho de participación">Derecho de participación</option>
+            <option value="Derecho de asociación y reunión">Derecho de asociación y reunión</option>
+            <option value="Derecho a la intimidad">Derecho a la intimidad</option>
+            <option value="Derecho a la seguridad jurídica y al debido proceso">Derecho a la seguridad jurídica y al debido proceso</option>
+            <option value="Derechos de niñas, niños y adolescentes migrantes">Derechos de niñas, niños y adolescentes migrantes</option>
+            <option value="Derecho de acceso a las Tecnologías de la Información y Comunicación">Derecho de acceso a las Tecnologías de la Información y Comunicación</option>
+        </select><br>
+
+        <label for="restitucion">Aspectos de Restitución:</label>
+        <textarea name="restitucion" id="restitucion" rows="4" cols="50" placeholder="Describa los aspectos de restitución..." required></textarea><br>
+
+        <label for="rehabilitacion">Aspectos de Rehabilitación:</label>
+        <textarea name="rehabilitacion" id="rehabilitacion" rows="4" cols="50" placeholder="Describa los aspectos de rehabilitación..."></textarea><br>
+
+        <label for="compensacion">Aspectos de Compensación:</label>
+        <textarea name="compensacion" id="compensacion" rows="4" cols="50" placeholder="Describa los aspectos de compensación..."></textarea><br>
+
+        <label for="satisfaccion">Aspectos de Satisfacción:</label>
+        <textarea name="satisfaccion" id="satisfaccion" rows="4" cols="50" placeholder="Describa los aspectos de satisfacción..."></textarea><br>
+
+        <label for="no_repeticion">Aspectos de No Repetición:</label>
+        <textarea name="no_repeticion" id="no_repeticion" rows="4" cols="50" placeholder="Describa los aspectos de no repetición..."></textarea><br>
+
+        <button type="submit">Guardar Niño</button>
+    </form>
+</body>
+</html>
