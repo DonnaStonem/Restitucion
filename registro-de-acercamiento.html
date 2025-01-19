@@ -198,8 +198,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="curp">CURP:</label>
-                        <input type="text" id="curp" name="curp" required>
+                        <label for="curp">CURP (opcional):</label>
+                        <input type="text" id="curp" name="curp" placeholder="Ejemplo: ABCD800101HDFLLL01" maxlength="18">
                     </div>
 
                     <div class="form-group">
@@ -231,6 +231,30 @@
                     <div class="form-group">
                         <label for="identificaciones_oficiales">Identificaciones oficiales:</label>
                         <input type="text" id="identificaciones_oficiales" name="identificaciones_oficiales">
+                        <label for="id">Tipo de identificación oficial</label>
+                        <select id="id" name="id">
+                            <option value="">Seleccione</option>
+                            <option value="ine">INE</option>
+                            <option value="pasaporte">Pasaporte</option>
+                            <option value="cedula">Cédula profesional</option>
+                            <option value="CURP">CURP</option>
+                            
+                        </select>
+                        <label for="numero_identificacion">Número de Identificación:</label>
+    <input type="text" id="numero_identificacion" name="numero_identificacion" placeholder="Ejemplo: 1234567890123" required>
+
+
+    <!-- Fecha de Emisión -->
+    <label for="fecha_emision">Fecha de Emisión:</label>
+    <input type="date" id="fecha_emision" name="fecha_emision">
+
+    <!-- Fecha de Vencimiento -->
+    <label for="fecha_vencimiento">Fecha de Vencimiento (si aplica):</label>
+    <input type="date" id="fecha_vencimiento" name="fecha_vencimiento">
+
+    <!-- Archivo Identificación -->
+    <label for="archivo_identificacion">Subir Archivo de Identificación:</label>
+    <input type="file" id="archivo_identificacion" name="archivo_identificacion" accept=".pdf,.jpg,.jpeg,.png">
                     </div>
 
                     <div class="form-group">
@@ -294,6 +318,8 @@
                             <option value="si">Sí</option>
                             <option value="no">No</option>
                         </select>
+                         <label for="tipo">¿Cuál?</label>
+                        <textarea id="tipo" name="tipo" rows="4" required></textarea>
                     </div>
 
                     <div class="form-group">
